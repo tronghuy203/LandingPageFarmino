@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="boxcenter">
+      <div class="muakhung1">
+      <div class="muabox1">
+          <h1>SẢN PHẨM</h1>
+          <table class="muatable">
+              <tr>
+                  <th>Mã SP</th>
+                  <th>Hình</th>
+                  <th>Tên</th>
+                  <th>Đơn giá</th>
+                  <th>Số lượng</th>
+                  <th>Đặt hàng</th>
+              </tr>
+              <tbody id="dssp">
+                  <tr>
+                      <td>H01</td>
+                      <td><img src="img/Image.png" alt=""></td>
+                      <td>Tomatoes</td>
+                      <td><span>2000</span>đ</td>
+                      <td><input type="number" min="1" max="10" value="1"></td>
+                      <td><input type="button" value="Thêm" onclick="them(this)"></td>
+                  </tr>
+                  <tr>
+                      <td>H02</td>
+                      <td><img src="img/Image (1).png" alt=""></td>
+                      <td>Carrots</td>
+                      <td><span>3000</span>đ</td>
+                      <td><input type="number" min="1" max="10" value="1"></td>
+                      <td><input type="button" value="Thêm" onclick="them(this)"></td>
+                  </tr>
+                  <tr>
+                      <td>H03</td>
+                      <td><img src="img/Image (2).png" alt=""></td>
+                      <td>Patatoes</td>
+                      <td><span>5000</span>đ</td>
+                      <td><input type="number" min="1" max="10" value="1"></td>
+                      <td><input type="button" value="Thêm" onclick="them(this)"></td>
+                  </tr>
+                  <tr>
+                      <td>H04</td>
+                      <td><img src="img/Image (3).png" alt=""></td>
+                      <td>Ladyfingers</td>
+                      <td><span>4000</span>đ</td>
+                      <td><input type="number" min="1" max="10" value="1"></td>
+                      <td><input type="button" value="Thêm" onclick="them(this)"></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      </div>
+      <div class="muabox2">
+        <img src="./img/x-transparent-animated-4.png" alt="" class="nuttat">
+          <h1 class="muah1">GIỎ HÀNG</h1>
+          <table class="muatable">
+              <tr>
+                  <th>Mã SP</th>
+                  <th>Hình</th>
+                  <th>Tên</th>
+                  <th>Đơn giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
+                  <th>Xóa</th>
+              </tr>
+              <tbody id="giohang">
+                 
+              </tbody>
+              <tr>
+                  <th colspan="5">Tổng đơn hàng</th>
+                  <th colspan="2"><span id="tongdonhang">0000</span> đ</th>
+              </tr>
+          </table>
+      </div>
+
+  </div>
+
+    <!-- ---------------------------------------------------- -->
+    <div class="dangky">
+      <form action="" method="POST" class="form" id="form-1" onsubmit="singup()">
+        <img src="./img/x-transparent-animated-4.png" alt="" class="nuttat2">
+          <h3 class="heading">Đăng ký để bắt đầu miễn phí</h3>
+
+          <div class="form-group">
+              <label class="form-label">Tên đầy đủ</label>
+              <input id="username" type="text" placeholder="VD: Nguyễn Văn A"> 
+          </div>
+
+          <div class="form-group">
+              <label class="form-label">Email</label>
+              <input id="email" type="text" placeholder="VD: email@gmail.com">
+          </div>
+          <div class="form-group">
+              <label class="form-label">Mật khẩu</label>
+              <input id="password" type="password" placeholder="Nhập mật khẩu">
+          </div>
+
+          <div class="form-group">
+              <label class="form-label">Nhập lại mật khẩu</label>
+              <input id="password_confirmation" type="password" placeholder="Nhập lại mật khẩu">
+          </div>
+
+          <button class="form-submit">Đăng ký</button>
+      </form>
+      </div>
+      <div>
+        <div class="dangnhap">
+          <form action="" method="POST" class="formdn" onsubmit="login()">
+            <img src="./img/x-transparent-animated-4.png" alt="" class="nuttatdn2">
+              <h3 class="heading">Đăng nhập</h3>
+    
+              <div class="form-groupdn">
+                  <label class="form-labeldn">Tên đầy đủ</label>
+                  <input id="usernamedn" type="text" placeholder="VD: Nguyễn Văn A"> 
+              </div>
+    
+              <div class="form-groupdn">
+                  <label  class="form-labeldn">Email</label>
+                  <input id="emaildn" type="text" placeholder="VD: email@gmail.com">
+              </div>
+              <div class="form-groupdn">
+                  <label class="form-labeldn">Mật khẩu</label>
+                  <input id="passworddn" type="password" placeholder="Nhập mật khẩu">
+              </div>
+    
+        
+              <button class="form-submitdn">Đăng Nhập</button>
+            </form>
+      </div>
+        
+    <!-- ---------------------------------------------------- -->
+    <!-- header -->
+    <div class="khung-ngoai1">
+      <div class="box-1">
+        <div class="logo">
+          <div class="logo-1"></div>
+          <div class="logo-2"></div>
+          <div class="logo-3"></div>
+          <div class="logo-4"></div>
+        </div>
+        <div class="t1">
+            <p>Farmino</p>
+        </div>
+
+        <ul class="menu">
+            <li>
+              <a href="#Howitworks">How it works</a>
+            </li>
+            <li>
+              <a href="#Aboutus">About us</a>
+            </li>
+            <li>
+              <a href="#Partnerss">Partners</a>
+            </li>
+            <li>
+              <a href="#Howitwork">How it works</a>
+            </li>
+            <li>
+              <a href="#Support">Support</a>
+            </li>
+
+              <button class="nut" >Buy now</button>
+
+        </ul>
+      </div>
+      <div class="box-2">
+        <div class="boxx-2">
+
+        </div>
+        <div class="boxx-1">
+           <p class="the-1">Organic farming reimagined with farmino</p>
+           <p class="the-2"> Luctus felis sit lectus tristique diam ornare bibendum. Arcu auctor suspendisse luctus amet bibendum pellentesque lorem. Malesuada lobortis tristique tortor,Get StartedStart free trial</p>
+           <button class="get-started" type="button" >Get Started</button>
+           <button class="start-free-trial" type="submit">Start free trial</button>
+           <div class="anhtrang1">
+           </div>
+        </div>
+      </div>  
+      
+    </div>
+  
+    <!-- ----------------------------------------------------- -->
+    <!-- trang 2 -->
+    <section class="course" id="Aboutus">
+      <div class="khung_1">
+          <h1 class="tieude">Mission we <br> are working on</h1>
+          <div class="course-items">
+              <div class="kc">
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. elit,sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.ut enim ad minima
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut.
+                  </p>
+              </div> 
+              <div class="kc2">
+                  <p>Aliquid ex ea commodo consequat.Duis aute irure dolor in reprehenderit in
+                  vooluptatevelit esse cillum dolore eu fugiat nulla pariotur. Excepteur sint
+                  occaecat cupidatat non proident.
+                  </p>
+              </div>          
+          </div>
+          <div class="trang1logo1">
+              <div>
+                  <img src="./img/image-removebg-1.png" alt="" class="logoo1">
+                  <p class="tenlogo1">Organic making</p>
+              </div>
+              <div>
+                  <img src="./img/image-removebg-2.png" alt="" class="logoo2">
+                  <p class="tenlogo2">Certified products</p>
+              </div>
+              <div>
+                  <img src="./img/image-removebg-preview.png" alt="" class="logoo3">
+                  <p class="tenlogo3">Fast delivery</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="khung_2">
+              <img src="./img/Imag.png" alt="" class="about-img-1">
+              <img src="./img/image 75.png" alt="" class="about-img-2">
+              <img src="./img/image 76.png" alt="" class="about-img-3">
+      </div>
+      
+  </section>
+    <!-- ----------------------------------------------------- -->
+    <!-- trang 3 -->
+    
+    <div class="khung-ngoai3">
+      <section id="Howitworks">
+      <h1 class="trang3tieude">Choose from the best</h1>
+      <div class="trang3tanh">
+        <img src="./img/Rectangle 602.png" alt=""class="trang3anhchen">
+        <h2 class="trang3chu">Agriculture Leader</h2>
+        <p class="trang3chu2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+        <img src="./img/smalltown.jpg" alt="" class="trang3anh">
+        
+        
+      </div>
+      <div>
+        <img src="./img/Rectangle 602.png" alt=""class="trang3anhchen1">
+        <h2 class="trang3chu1">Quality Standards</h2>
+        <p class="trang3chu22">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+        <img src="./img/max-delsid-unsplash_SyrahShiraz_web-920x609.jpg" alt="" class="trang3anh1"> 
+      </div>
+      <div>
+        <img src="./img/Rectangle 602.png" alt=""class="trang3anhchen2">
+        <h2 class="trang3chu11">Organic Services</h2>
+        <p class="trang3chu23">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+        <img src="./img/Agriculture-in-North-Korea-2-1030x687.jpg" alt="" class="trang3anh2">
+        
+      </div>
+    </div>
+  </section>
+    <!-- ----------------------------------------------------- -->
+    <!-- trang 4 -->
+    <div class="khung-ngoai4">
+      <section id="Partnerss">
+      <h1 class="trang4tieude">Testimonials</h1>
+      <div class="trang4slideshow">
+          <div class="trang4slides">
+              <input type="radio" name="bottom" id="trang4bottom_1" checked>
+              <input type="radio" name="bottom" id="trang4bottom_2" checked>
+              <input type="radio" name="bottom" id="trang4bottom_3" checked>
+              <input type="radio" name="bottom" id="trang4bottom_4" checked>
+
+              <div class="trang4slide s1">
+                  
+                  <div class="trang4box1">
+                    <p class="trang4chu"></p>
+                    <img src="" alt="" class="trang4anh">            
+                    <p class="trang4tenslide"></p>
+                  </div>
+                  <div class="trang4box2">
+                    <p class="trang4chu1"></p>
+                    <img src="" alt="" class="trang4anh1">
+                    <p class="trang4tenslide1"></p>
+                  </div>
+                  <div class="trang4box3">
+                    <p class="trang4chu2"></p>
+                    <img src="" alt="" class="trang4anh2">
+                    <p class="trang4tenslide2"></p> 
+                  </div>
+                 
+              
+              </div>
+              <div class="trang4slide">
+                <div class="trang4box1">
+                  <p class="trang4chu3"></p>
+                  <img src="" alt="" class="trang4anh3">            
+                  <p class="trang4tenslide3"></p>
+                </div>
+                <div class="trang4box2">
+                  <p class="trang4chu4"></p>
+                  <img src="" alt="" class="trang4anh4">
+                  <p class="trang4tenslide4"></p>
+                </div>
+                <div class="trang4box3">
+                  <p class="trang4chu5"></p>
+                  <img src="" alt="" class="trang4anh5">
+                  <p class="trang4tenslide5"></p> 
+                </div>
+              </div>
+              <div class="trang4slide">
+                <div class="trang4box1">
+                  <p class="trang4chu6"></p>
+                  <img src="" alt="" class="trang4anh6">            
+                  <p class="trang4tenslide6"></p>
+                </div>
+                <div class="trang4box2">
+                  <p class="trang4chu7"></p>
+                  <img src="" alt="" class="trang4anh7">
+                  <p class="trang4tenslide7"></p>
+                </div>
+                <div class="trang4box3">
+                  <p class="trang4chu8"></p>
+                  <img src="" alt="" class="trang4anh8">
+                  <p class="trang4tenslide8"></p> 
+                </div>
+              </div>
+              <div class="trang4slide">
+                <div class="trang4box1">
+                  <p class="trang4chu9"></p>
+                  <img src="" alt="" class="trang4anh9">            
+                  <p class="trang4tenslide9"></p>
+                </div>
+                <div class="trang4box2">
+                  <p class="trang4chu10"></p>
+                  <img src="" alt="" class="trang4anh10">
+                  <p class="trang4tenslide10"></p>
+                </div>
+                <div class="trang4box3">
+                  <p class="trang4chu11"></p>
+                  <img src="" alt="" class="trang4anh11">
+                  <p class="trang4tenslide11"></p> 
+                </div>
+              </div>
+             
+          </div>
+          <div class="trang4nav">
+              <label for="trang4bottom_1" class="trang4bar"></label>
+              <label for="trang4bottom_2" class="trang4bar"></label>
+              <label for="trang4bottom_3" class="trang4bar"></label>
+              <label for="trang4bottom_4" class="trang4bar"></label>
+
+          </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------- -->
+    <!-- Trang 5 -->
+    <div class="khung-ngoai5">
+      <section id="Howitwork">
+        <h1 class="trang5tieude">Rediscover the taste</h1>
+        <div class="slideshow">
+            <div class="slides">
+                <input type="radio" name="bottom" id="bottom_1" checked>
+                <input type="radio" name="bottom" id="bottom_2" checked>
+                <input type="radio" name="bottom" id="bottom_3" checked>
+                <input type="radio" name="bottom" id="bottom_4" checked>
+  
+                <div class="slide s1" >
+                    <img src="" alt="" class="anh">
+                    <img src="" alt="" class="anh1">
+                    <img src="" alt="" class="anh2">
+                    <img src="" alt="" class="anh3">
+                    <p></p>
+                    <p class="tenslide"></p>
+                    <p class="tenslide1"></p>
+                    <p class="tenslide2"></p> 
+                    <p class="tenslide3"></p>
+                
+                </div>
+                <div class="slide">
+                  <img src="" alt="" class="anh4">            
+                  <img src="" alt="" class="anh5">
+                  <img src="" alt="" class="anh6">
+                  <img src="" alt="" class="anh7">
+                  <p></p>
+                  <p class="tenslide4"></p>
+                  <p class="tenslide5"></p>
+                  <p class="tenslide6"></p>
+                  <p class="tenslide7"></p> 
+                </div>
+                <div class="slide">
+                  <img src="" alt="" class="anh8">            
+                  <img src="" alt="" class="anh9">
+                  <img src="" alt="" class="anh10">
+                  <img src="" alt="" class="anh11">
+                  <p></p>
+                  <p class="tenslide8"></p>
+                  <p class="tenslide9"></p>
+                  <p class="tenslide10"></p>
+                  <p class="tenslide11"></p>
+                </div>
+                <div class="slide">
+                  <img src="" alt="" class="anh12">            
+                  <img src="" alt="" class="anh13">
+                  <img src="" alt="" class="anh14">
+                  <img src="" alt="" class="anh15">
+                  <p></p>
+                  <p class="tenslide12"></p>
+                  <p class="tenslide13"></p>
+                  <p class="tenslide14"></p>
+                  <p class="tenslide15"></p>
+  
+                </div>
+            </div>
+            <div class="nav">
+                <label for="bottom_1" class="bar"></label>
+                <label for="bottom_2" class="bar"></label>
+                <label for="bottom_3" class="bar"></label>
+                <label for="bottom_4" class="bar"></label>
+            </div>
+        </div>
+        </div>
+      </section>
+    <!-- ----------------------------------------------------- -->
+    <!-- Trang 6 -->
+    <div class="khung-ngoai6">
+        <div class="trang6box1">
+          <div id="video">
+            <img src="./img/Vector1.png" alt="" class="trang6nut">
+            <img src="./img/Vector.png" alt="" class="trang6nut1">
+            <img src="./img/image 43.png" alt="" style="border-radius: 10px;">
+          </div>
+          
+        </div>
+        <div class="trang6video1" >
+          <img src="./img/x-transparent-animated-4.png" alt="" class="trang6nuttat">
+          <video class="trang6video" controls>
+            <source src="./img/Dinh dưỡng là gì_ Thế nào là dinh dưỡng cân bằng_.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="trang6box2">
+          <h1 class="trang6tieude">Everyone should have access to nurutious food</h1>
+          <div>
+              <p class="trang6nd"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. elit,sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.ut enim ad minima
+              veniam, quis nostrud exercitation ullamco laboris nisi ut.
+              </p>
+              <p class="trang6nd">Aliquid ex ea commodo consequat.Duis aute irure dolor in reprehenderit in
+              vooluptatevelit esse cillum dolore eu fugiat nulla pariotur. Excepteur sint
+              occaecat cupidatat non proident.
+              </p> 
+            
+          </div>    
+          <button class="trang6nutmua">Buy now</button> 
+        </div>
+    </div>
+    <!-- ----------------------------------------------------- -->
+    <!-- Trang 7 -->
+    <section id="Buynow">
+    <div class="khung-ngoai7">
+      <div class="trang7khung1">
+        <div class="trang7box1">
+          <div class="trang7aba"> 
+            <img src="./img/Vector5.png" alt="" class="trang7anh">
+          </div>
+          <h1>Email</h1>
+          <p class="trang7chu">contact@flex.co</p>
+        </div>
+        <div class="trang7box2">
+          <div class="trang7aba"> 
+            <img src="./img/Vector2.png" alt="" class="trang7anh">
+          </div>
+          <h1>Phone</h1>
+          <p class="trang7chu">+7-843-672-431</p>
+        </div>
+        <div class="trang7box3">
+          <div class="trang7aba"> 
+            <img src="./img/Vector3.png" alt="" class="trang7anh">
+          </div>
+          <h1>Ofice</h1>
+          <p class="trang7chu">1686, Geraldine Lane</p>
+          <p class="trang7chu">New York, NY 10013</p>
+        </div>
+        <div class="trang7box4">
+          <div class="trang7aba"> 
+            <img src="./img/Vector4.png" alt="" class="trang7anh">
+          </div>
+          <h1>Socials</h1>
+          <img src="./img/facebook-icon.webp" alt="" class="trang7logo">
+          <img src="./img/twitter-png-twitter-icon-1600.png" alt="" class="trang7logo1">
+          <img src="./img/instagram.png" alt="" class="trang7logo1">
+          <img src="./img/Vector7.png" alt="" class="trang7logo1">
+
+        </div>
+      </div>
+      <div class="trang7khung2">
+        <p class="trang7ten">Email</p>
+        <input type="text1" class="text-300" placeholder="pat@shuffle.dev">
+        <p class="trang7ten">Mesage</p>
+        <input type="text1" class="text-301" placeholder="Your message">
+        <button class="trang7nut">Send</button>
+      </div>
+    </div>
+    </section>
+    <!-- ----------------------------------------------------- -->
+    <!-- footer -->
+    <section id="Support">
+    <div class="khung-ngoai8">
+      <div class="footer">
+        <div class="logofooter">
+          <div class="logo-1"></div>
+          <div class="logo-2"></div>
+          <div class="logo-3"></div>
+          <div class="logo-4"></div>
+        </div>
+      <div class="t2">
+        <p>Farmino</p>
+      </div>
+      <div class="tndfooter">
+          <div class="ndfooter1">
+            <h3 class="kcfooter">Quich links</h3>
+              <!-- <li class="sfooter1"> -->
+                <p class="kcfooter">Home</p>
+                <p class="kcfooter">About</p>
+                <p class="kcfooter">Contact</p>
+                <p class="kcfooter">Why choose us</p>
+                <p class="kcfooter">Privacy Palicy</p>
+                <p class="kcfooter">Team</p>
+              <!-- </li> -->
+            
+          </div>
+          <div class="ndfooter2">
+            <h3 class="kcfooter">Products</h3>
+            <p class="kcfooter">Tomatoes</p>
+            <p class="kcfooter">Mangoes</p>
+            <p class="kcfooter">Red cheries</p>
+            <p class="kcfooter">Banana</p>
+            <p class="kcfooter">Carats</p> 
+          </div>
+          <div class="ndfooter3">
+            <h3 class="kcfooter">Products</h3>
+              <div class="khung">
+                <div class="boxxx-11">
+                  <p class="kcfooter1">Customer care:</p>
+                </div>
+                <div class="boxxx-12">
+                  <p class="kcfooter1">123-456-7890</p>
+                </div>
+              </div>
+              <div class="khung">
+                <div class="boxxx-11">
+                    <p class="kcfooter1">Business inquiry:</p>
+                </div>
+                <div class="boxxx-12">
+                    <p class="kcfooter1">123-456-7890</p>
+                </div>
+              </div>
+          
+          </div>
+          <div class="ndfooter4">
+            <h3 class="kcfooter">Social</h3>
+            <img src="./img/facebook-icon.webp" alt="" class="anhlogo">
+            <img src="./img/instagram.png" alt="" class="anhlogo1">
+            <img src="./img/twitter-png-twitter-icon-1600.png" alt="" class="anhlogo2">
+            <img src="./img/LOGOS-YOUTUBE-NOIR.png" alt="" class="anhlogo3">
+
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="ndcfooter">
+        2022 Farmino | All Rights Reserved
+      </div>
+    </div>
+    </div>
+  </section>
+  <script src="javascript.js"></script>
+  
+  </body>
+</html>
+
+
+<video src="https://www.youtube.com/watch?v=o6LLw41bn3s"></video>
